@@ -1,0 +1,7 @@
+<h1> Bookmarks </h1>
+<% @bookmarks.each do |bookmark| %>
+  <div class="row">
+    <p> <%= bookmark.topic.title %> </p>
+    <p> <%= bookmark.url %> </p>
+  </div>
+<%end%>
