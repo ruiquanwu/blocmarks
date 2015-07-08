@@ -1,0 +1,21 @@
+<% thumbBookmark = LinkThumbnailer.generate(@bookmark.url) %>
+<h1>
+  Bookmarks#information
+  <%= link_to "Edit", edit_topic_bookmark_path(@topic, @bookmark), class: 'btn btn-success'%>
+  <%= link_to "Delete", [@topic, @bookmark], method: :delete, class: 'btn btn-danger', data:{confirm: "Are you sure to delete this topic?"} %>
+</h1>
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag thumbBookmark.images.first.src, size: "200x200"%>
+  </div>
+  <h2> <%= thumbBookmark.title %></h2>
+  <div class="col-md-4">
+    <p> URL </p>
+    <%= link_to @bookmark.url, @bookmark.url %>
+  </div>
+  <div class="col-md-4">
+    <p> Description </p>
+    <%= thumbBookmark.description %>
+  </div>
+  
+</div>

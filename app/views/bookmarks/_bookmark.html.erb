@@ -1,5 +1,5 @@
 <% thumbBookmark = LinkThumbnailer.generate(bookmark.url) %>
   <div class="img-thumbnail" width="304" height="236">
-    <%= image_tag thumbBookmark.images.first.src, size: "200x200" %>
-    <p class="text-center"> <%= link_to bookmark.url, bookmark.url %> </p>
+    <%= link_to (image_tag thumbBookmark.images.first.src, size: "200x200"),  topic_bookmark_path(bookmark.topic, bookmark)%>
+    <p class="text-center"> <%= link_to "click to enter this site", bookmark.url %> </p>
   </div>

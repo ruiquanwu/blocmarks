@@ -1,0 +1,7 @@
+<%= form_for [topic, bookmark] do |f| %>
+  <div class="form-group">
+    <%= f.label :URL %>
+    <%= f.text_field :url, class: "form-control", placeholder: "Enter a url for this bookmark" %>
+  </div>
+  <%= f.submit "Save", class: "btn btn-success" %>
+<% end %>
