@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   post :incoming, to: 'incoming#create'
   resources :bookmarks
+  resources :topics
 end

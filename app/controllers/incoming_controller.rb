@@ -31,6 +31,7 @@ class IncomingController < ApplicationController
       
     else
       @topic = Topic.new(title: subject, user:@user)
+      @topic.save
     end
      # Now that you're sure you have a valid user and topic, build and save a new bookmark
     @bookmark = Bookmark.new(url: url, topic: @topic)
