@@ -1,0 +1,20 @@
+<h1 class="text-center">My Blocmarks</h1>
+<div class="row">
+<% @bookmarks.each do |bookmark| %>
+  <div class="col-md-4">
+  <% thumbBookmark = LinkThumbnailer.generate(bookmark.url) %>
+  <div class="img-thumbnail" width="304" height="236">
+    <%= link_to (image_tag thumbBookmark.images.first.src, size: "200x200"),  topic_bookmark_path(bookmark.topic, bookmark)%>
+    <p class="text-center"> <%= link_to "click to enter this site", bookmark.url %> </p>
+  </div>
+    <p class="text-center"> <%= link_to "remove", topic_bookmark_path(bookmark.topic, bookmark), method: :delete %> </p>
+  </div>
+<% end %>
+</div>
+
+<h1 class="text-center"> Liked Blocmarks </h1>
+<div class="row">
+  <% @liked_bookmarks.each do |like| %>
+  <%=render partial:"bookmarks/bookmark", locals: {bookmark: like.bookmark}%>
+  <% end %>
+</div>
