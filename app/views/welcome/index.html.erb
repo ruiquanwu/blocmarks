@@ -1,1 +1,13 @@
 <h1 class="text-center"> All Blocmarks </h1>
+<% if @topics %>
+  <% @topics.each do |topic| %>
+    <p> <%= link_to "##{topic.title}", topic %> </p>
+      <%= render topic.bookmarks %>
+  <% end %>
+<% end %>
+<br>
+<p class="text-center"> 
+  <% if current_user %>
+  <%= link_to "Create new topic", new_topic_path, class: 'btn btn-success'%>
+  <% end %>
+</p>

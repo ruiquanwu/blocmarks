@@ -1,7 +1,11 @@
 <h1>
   <%= @topic.title %> 
-  <%= link_to "Edit", edit_topic_path, class: "btn btn-success" %>
-  <%= link_to "Delete", @topic, method: :delete, class: "btn btn-danger", data:{confirm: "Are you sure to delete this topic?"} %>
+  <% if policy(@topic).edit? %>
+    <%= link_to "Edit", edit_topic_path, class: "btn btn-success" %>
+    <%= link_to "Delete", @topic, method: :delete, class: "btn btn-danger", data:{confirm: "Are you sure to delete this topic?"} %>
+  <% end %>
 </h1>
 <%= render @topic.bookmarks %>
-<p class="text-center"> <%= link_to "Create new Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success' %> </p>
+<% if policy(Bookmark.new).create? %>
+  <p class="text-center"> <%= link_to "Create new Bookmark", new_topic_bookmark_path(@topic), class: 'btn btn-success' %> </p>
+<% end %>
