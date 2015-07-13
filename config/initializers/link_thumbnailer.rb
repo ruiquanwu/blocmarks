@@ -2,7 +2,7 @@
 LinkThumbnailer.configure do |config|
   # Numbers of redirects before raising an exception when trying to parse given url.
   #
-  # config.redirect_limit = 3
+  config.redirect_limit = 3
 
   # Set user agent
   #
@@ -17,8 +17,8 @@ LinkThumbnailer.configure do |config|
   # it raises a Net::OpenTimeout exception.
   #
   # See http://www.ruby-doc.org/stdlib-2.1.1/libdoc/net/http/rdoc/Net/HTTP.html#open_timeout
-  #
-  # config.http_open_timeout = 5
+  #klj[[[[[[b gggggggg]]]]]]
+   config.http_open_timeout = 5
 
   # List of blacklisted urls you want to skip when searching for images.
   #
@@ -60,8 +60,9 @@ LinkThumbnailer.configure do |config|
   # Note that LinkThumbnailer will only sort fetched images between each other.
   # Meaning that they could be a "better" image on the page.
   #
-  # config.image_limit = 5
+  config.image_limit = 5
 
+  
   # Whether you want LinkThumbnailer to return image size and type or not.
   # Setting this value to false will increase performance since for each images, LinkThumbnailer
   # does not have to fetch its size and type.

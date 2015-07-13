@@ -2,4 +2,5 @@
   <div class="img-thumbnail" width="304" height="236">
     <%= link_to (image_tag thumbBookmark.images.first.src, size: "200x200"),  topic_bookmark_path(bookmark.topic, bookmark)%>
     <p class="text-center"> <%= link_to "click to enter this site", bookmark.url %> </p>
+    <%= render partial: 'likes/like', locals: { topic: bookmark.topic, bookmark: bookmark } %>
   </div>
